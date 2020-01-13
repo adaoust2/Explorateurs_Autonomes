@@ -3,6 +3,11 @@ package test;
 import data.Map;
 import java.util.*;
 
+
+/*
+ * this class contain the main
+ * this class is for launch the app and make unit test
+ */
 public class test {
 	public static void main(String[] argv) {
 		System.out.println("Test Started");
