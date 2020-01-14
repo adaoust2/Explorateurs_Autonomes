@@ -3,7 +3,7 @@ package data;
  * @author Bjmeo
  */
 public class Communication extends Item {
-
+ 
 	private int nbPerson;
 	private double distance;
 	 
