@@ -8,6 +8,7 @@ public class Weapon extends Item {
 	private float damage;
 	
 	/**constructors from superclass**/
+	
 	public Weapon() {
 		super();
 	}
