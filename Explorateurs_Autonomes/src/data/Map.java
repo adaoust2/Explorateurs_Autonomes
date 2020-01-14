@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Map {
 	private double width; // X value 
 	private double height; // Y value
-	private double tabOfMap[][];
+	private double tabOfMap[][] = new double[500][500] ;
 	//private ArrayList<Monster> listOfMonster = new ArrayList<Monster>();
 	
 	
@@ -21,8 +21,8 @@ public class Map {
 	
 	public Map() { //default constructor 
 		super();
-		this.width = 5000;
-		this.height = 5000;
+		this.width = 500;
+		this.height = 500;
 	}
 	
 	public Map(double width, double height) { // 2nd with possibility to change the size of map
@@ -38,10 +38,9 @@ public class Map {
 		for (int y=0; y<height; y++) { 
 			for (int x=0; x<width; x++) {
 				if(x>5&&y>5&&x<width-5&&y<height-5) {
-					
-					tabOfMap[x][y]=1;
+					tabOfMap[x][y]=1; //land
 				}
-				tabOfMap[x][y]=0;	
+				tabOfMap[x][y]=0; // water	
 			}
 		}
 
