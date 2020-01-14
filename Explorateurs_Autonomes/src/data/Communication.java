@@ -34,6 +34,4 @@ public class Communication extends Item {
 	public void setDistance(double distance) {
 		this.distance = distance;
 	}
-	
-	
 }
