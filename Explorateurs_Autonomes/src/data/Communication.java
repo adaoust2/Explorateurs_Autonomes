@@ -30,7 +30,7 @@ public class Communication extends Item {
 	}
 	public double getDistance() {
 		return distance;
-	} 
+	}  
 	public void setDistance(double distance) {
 		this.distance = distance;
 	}    
