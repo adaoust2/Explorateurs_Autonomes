@@ -1,5 +1,7 @@
 package data;
-
+/**
+ * @author Bjmeo
+ */
 public class Weapon extends Item {
 
 	private String effect;
