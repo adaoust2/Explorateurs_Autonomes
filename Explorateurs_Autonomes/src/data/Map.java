@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class Map {
 	private double width; // X value 
 	private double height; // Y value
-	private double tabOfMap[][];
+	private double tabOfMap[][]; 
 	//private ArrayList<Monster> listOfMonster = new ArrayList<Monster>();
 	
 	
@@ -21,8 +21,8 @@ public class Map {
 	
 	public Map() { //default constructor 
 		super();
-		this.width = 5000;
-		this.height = 5000;
+		this.width = 800;
+		this.height = 800;
 	}
 	
 	public Map(double width, double height) { // 2nd with possibility to change the size of map
@@ -32,19 +32,90 @@ public class Map {
 	}
 	
 	public void generateNewMap() {
-		
-		
+		tabOfMap = new double[(int)width][(int)height];
 		//implementation of each box of the table
+		
+		int type =(int)(Math.random()%1) + 1; // determine the type of the isle 
+		int value;
+		boolean isSand = false;
+		double margeLeft=0;
+		double margeRight=0;
+		
+		switch (type) { // initialize value in function of the type 
+			case 1:
+				margeLeft = width*0.48;
+				margeRight = width*0.52;
+				
+				
+				
+				break;
+			
+			default:System.out.println("type of make not recognized, you should check in class Map.java at the method generateNewMap ");
+			System.out.println("type is :" + type);break;
+		}
+		
+		
+		
 		for (int y=0; y<height; y++) { 
-			for (int x=0; x<width; x++) {
-				if(x>5&&y>5&&x<width-5&&y<height-5) {
+			if(y>height*0.05&&y<height*0.95) {
+				switch (type) { // initialize value in function of the type 
+					case 1:
+						if (y<height/2){
+							margeLeft = margeLeft*0.99;
+							margeRight = margeRight+(width-margeRight)*0.011;
+						}
+						else {
+							if(margeLeft<width/2) {
+								margeLeft = margeLeft*1.01;
+							}
+							if(margeRight>width/2) {
+								margeRight = margeRight-(width-margeRight)*0.011;
+							}
+							
+						}
+						
+						break;
 					
-					tabOfMap[x][y]=1;
+					default:
+						System.out.println("type of make not recognized, you should check in class Map.java at the method generateNewMap ");
+						System.out.println("type is :" + type);break;
 				}
-				tabOfMap[x][y]=0;	
+			}
+			if(isSand==false && y>height*0.8) {
+				 if((Math.random()*100)%100<4) {
+					 isSand=true;
+				 }
+				 
+			}
+			for (int x=0; x<width; x++) {
+				value = -1;
+				if(x<width*0.05||y<height*0.05||x>width*0.95||y>height*0.95) {
+					value=0; // water
+				}
+				else {
+					switch (type) {
+						case 1:
+							if (x>margeLeft && x< margeRight) {
+								if(isSand==true) {
+									value = 2; // land
+								}
+								else {
+									value = 1; // land	
+								}
+							}
+							else { 
+								value = 0; // water
+							}
+							break;
+							
+						default:System.out.println("type of make not recognized, you should check in class Map.java at the method generateNewMap ");
+						System.out.println("type is :" + type);break;
+					}
+				}
+				tabOfMap[x][y]=value; 
+
 			}
 		}
-
 	}
 
 	
