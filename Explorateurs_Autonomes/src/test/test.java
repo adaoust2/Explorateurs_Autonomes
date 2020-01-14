@@ -1,6 +1,8 @@
 package test;
 
 import data.Map;
+import gui.Menu;
+
 import java.util.*;
 
 
@@ -12,7 +14,8 @@ public class test {
 	public static void main(String[] argv) {
 		System.out.println("Test Started");
 		// if you want to make your own test just comment my line testMap and create your own fonction for your test
-		testMap();
+		//testMap();
+		testMenu();
 		
 		
 		
@@ -23,6 +26,9 @@ public class test {
 		double tab[][] = map.getTabOfMap();
 		
 		
+	}
+	public static void testMenu() {
+		Menu menu = new Menu();
 	}
 
 	
