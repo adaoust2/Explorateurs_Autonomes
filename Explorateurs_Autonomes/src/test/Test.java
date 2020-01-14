@@ -4,7 +4,7 @@ import data.Map;
 import java.util.*;
 import gui.Gui;
 
-/*
+/* @author antoine
  * this class contain the main
  * this class is for launch the app and make unit test
  */
@@ -24,7 +24,7 @@ public class Test {
 		double tab[][] = map.getTabOfMap();
 		System.out.println("map size x=" + map.getWidth() + " and y= " + map.getHeight() + "and the first value is : " + tab[0][0]);
 		Gui display = new Gui();
-		display.Display(tab);
+		display.Display(tab,map.getWidth(),map.getHeight());
 		
 	}
 
