@@ -12,7 +12,7 @@ public class Gui extends Frame {
 	
 	// constant of color 
 	public Color DARKGREEN = new Color(0,100,0);
-	public Color DEEPSKYBLUE = new Color(0,192,255);
+	public Color BLUE = new Color(0,0,255);
 	public Color GOLDSAND = new Color(255,215,0);
 	
 	//method for display the map
@@ -34,7 +34,7 @@ public class Gui extends Frame {
 	     					g.setColor(DARKGREEN);
 	            		}
 	     				else if (mapTab[x][y]==0) { // water
-	     					g.setColor(DEEPSKYBLUE);
+	     					g.setColor(BLUE);
 	     				}
 	     				else { // if the value is not recognized 
 	     					System.out.println("Error ocured in Gui.java: \n Unknow value of map box :" + mapTab[x][y] );
