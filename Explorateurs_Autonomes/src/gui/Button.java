@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -12,24 +13,24 @@ import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 
+import data.GParameter;
+
 public class Button extends JButton implements MouseListener{
 
 	private Image but ;
+	private Font font;
 
 	
 	public Button() {
-
-		try {
-			but = ImageIO.read(new File("src/Pictures/button.jpg")); 
-		}catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
 		this.addMouseListener(this);
 	}
 	
 	@Override
 	public void paintComponents(Graphics g) {
-		g.drawImage(but, 0, 0, this.getWidth(), this.getHeight(), this);
+		font = new Font("Title", Font.BOLD, 30);
+	    g.setFont(font);
+	    g.setColor(GParameter.WHITE);
+		
 	}
 	@Override
 	public void mouseClicked(MouseEvent arg0) {

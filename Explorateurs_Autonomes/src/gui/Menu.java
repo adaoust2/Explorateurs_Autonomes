@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
@@ -32,13 +33,14 @@ public class Menu extends JPanel{
 	private JPanel content = this;
 	private Font font;
 	private Font fonttitle;
+	private Icon icon;
 	private Button game = new Button();
+	private Button high = new Button();
 
 	
 	public Menu() {
 		menu.setSize(GParameter.WIDTH, GParameter.HEIGH);
 		menu.setTitle("Exploreur");
-		//menu.setBackground(GParameter.MENU_BACKGROUND);
 
 
 		menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -79,8 +81,13 @@ public class Menu extends JPanel{
 	public void setBack() {
 		content.setSize(GParameter.WIDTH, GParameter.HEIGH);
 		content.setVisible(true);
-		game.setBounds(100, 100, 100, 100);
+		game.setBounds(400, 550, 450, 200);
 		game.setVisible(true);
+		game.setIcon(new ImageIcon("src/Pictures/button_new.jpg"));
+		high.setBounds(950, 550, 450, 200);
+		high.setVisible(true);
+		high.setIcon(new ImageIcon("src/Pictures/button_high.jpg"));
+		menu.add(high);
 		menu.add(game);
 		menu.add(content);
 
