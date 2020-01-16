@@ -1,13 +1,19 @@
 package gui;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,9 +27,14 @@ import data.GParameter;
 * 
 */
 public class Menu extends JPanel{
-	JFrame menu = new JFrame() ;
-	private Image back ;
-	JPanel content = this;
+	private JFrame menu = new JFrame() ;
+	private Image back;
+	private JPanel content = this;
+	private Font font;
+	private Font fonttitle;
+	private Button game = new Button();
+
+	
 	public Menu() {
 		menu.setSize(GParameter.WIDTH, GParameter.HEIGH);
 		menu.setTitle("Exploreur");
@@ -32,7 +43,7 @@ public class Menu extends JPanel{
 
 		menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		try {
-			back=ImageIO.read(new File("src/Pictures/explo1.jpg"));
+			back=ImageIO.read(new File("src/Pictures/explo1.jpeg"));
 		}catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -44,16 +55,36 @@ public class Menu extends JPanel{
 	}
 	public void paintComponent(Graphics g) {
 		g.drawImage(back, 0, 0, GParameter.WIDTH, GParameter.HEIGH, content);
-		Font font = new Font("Title", Font.BOLD, 60);
+
+
+		try {
+			File caribbean = new File("src/Caribbean.fon");
+			//Font.createFont(95, caribbean);
+			fonttitle = new Font("Title", Font.BOLD, 100);
+			font = new Font("Title", Font.BOLD, 30);
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	    g.setFont(fonttitle);
+	    g.setColor(GParameter.WHITE);
+	    g.drawString("Explorer", 700, 150);
 	    g.setFont(font);
-	    g.setColor(GParameter.BLACK);
-	    g.drawString("Explorer", 775, 100);   
+
+
+	    //g.drawImage(butt, 500,600 , 400, 300, content);
+	    g.drawString("New Game", 600, 650);
 	}
        
 	public void setBack() {
 		content.setSize(GParameter.WIDTH, GParameter.HEIGH);
 		content.setVisible(true);
+		game.setBounds(100, 100, 100, 100);
+		game.setVisible(true);
+		menu.add(game);
 		menu.add(content);
+
+
 
 	}
 	public JFrame getMenu() {

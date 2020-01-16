@@ -15,7 +15,7 @@ public class test {
 		System.out.println("Test Started");
 		// if you want to make your own test just comment my line testMap and create your own fonction for your test
 		//testMap();
-
+		testMenu();
 		
 		
 		
