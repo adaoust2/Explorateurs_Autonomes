@@ -9,8 +9,8 @@ import javax.swing.JPanel;
 
 import data.GParameter;
 /* @author antoine
+ * @author bjmeo
  * this class is for grafical display 
- * 
  */
 public class Gui extends JFrame {
 	/**
@@ -45,6 +45,7 @@ public class Gui extends JFrame {
 		this.sizeY = sizeY;
 		this.tab = tab;
 		
+	    //allow to get the computer screen dimension 	
 	    dimension = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
 	    screenHeight = (int)dimension.getHeight();
 	    screenWidth  = (int)dimension.getWidth();
