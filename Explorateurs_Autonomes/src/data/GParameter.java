@@ -9,4 +9,9 @@ public class GParameter {
 	public static Color ORANGE=new Color(255, 140, 0);
 	public static int WIDTH = 1920;
 	public static int HEIGH = 1080;
+	public static int mapWidth = 700;
+	public static int mapHeight = 700;
+	public static boolean endSimulation = false;
+	public static boolean quitSimulation = false;
+	
 }

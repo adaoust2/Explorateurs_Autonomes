@@ -21,8 +21,8 @@ public class Map {
 	
 	public Map() { //default constructor 
 		super();
-		this.width = 800;
-		this.height = 800;
+		this.width = GParameter.mapWidth;
+		this.height = GParameter.mapHeight;
 	}
 	
 	public Map(double width, double height) { // 2nd with possibility to change the size of map
@@ -44,18 +44,11 @@ public class Map {
 		switch (type) { // initialize value in function of the type 
 			case 1:
 				margeLeft = width*0.48;
-				margeRight = width*0.52;
-				
-				
-				
+				margeRight = width*0.52;			
 				break;
-			
 			default:System.out.println("type of make not recognized, you should check in class Map.java at the method generateNewMap ");
 			System.out.println("type is :" + type);break;
 		}
-		
-		
-		
 		for (int y=0; y<height; y++) { 
 			if(y>height*0.05&&y<height*0.95) {
 				switch (type) { // initialize value in function of the type 
@@ -71,11 +64,8 @@ public class Map {
 							if(margeRight>width/2) {
 								margeRight = margeRight-(width-margeRight)*0.011;
 							}
-							
 						}
-						
 						break;
-					
 					default:
 						System.out.println("type of make not recognized, you should check in class Map.java at the method generateNewMap ");
 						System.out.println("type is :" + type);break;
@@ -85,7 +75,6 @@ public class Map {
 				 if((Math.random()*100)%100<4) {
 					 isSand=true;
 				 }
-				 
 			}
 			for (int x=0; x<width; x++) {
 				value = -1;
@@ -107,19 +96,15 @@ public class Map {
 								value = 0; // water
 							}
 							break;
-							
 						default:System.out.println("type of make not recognized, you should check in class Map.java at the method generateNewMap ");
 						System.out.println("type is :" + type);break;
 					}
 				}
 				tabOfMap[x][y]=value; 
-
 			}
 		}
 	}
 
-	
-	
 	
 	
 	// after this their is all the AUTO-generate getter and setter
