@@ -13,7 +13,7 @@ public class Map {
 	private double width; // X value 
 	private double height; // Y value
 	private double tabOfMap[][]; 
-	//private ArrayList<Monster> listOfMonster = new ArrayList<Monster>();
+	private ArrayList<Monster> listOfMonster = new ArrayList<Monster>();
 	
 	
 	
@@ -46,7 +46,7 @@ public class Map {
 				margeLeft = width*0.48;
 				margeRight = width*0.52;			
 				break;
-			default:System.out.println("type of make not recognized, you should check in class Map.java at the method generateNewMap ");
+			default:System.out.println("type is not recognized, you should check in class Map.java at the method generateNewMap ");
 			System.out.println("type is :" + type);break;
 		}
 		for (int y=0; y<height; y++) { 
@@ -67,7 +67,7 @@ public class Map {
 						}
 						break;
 					default:
-						System.out.println("type of make not recognized, you should check in class Map.java at the method generateNewMap ");
+						System.out.println("type is not recognized, you should check in class Map.java at the method generateNewMap ");
 						System.out.println("type is :" + type);break;
 				}
 			}
@@ -96,7 +96,7 @@ public class Map {
 								value = 0; // water
 							}
 							break;
-						default:System.out.println("type of make not recognized, you should check in class Map.java at the method generateNewMap ");
+						default:System.out.println("type is not recognized, you should check in class Map.java at the method generateNewMap ");
 						System.out.println("type is :" + type);break;
 					}
 				}

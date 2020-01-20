@@ -18,7 +18,6 @@ public class Gui extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public double mapTab[][];
 	
 	
 	// constant of color 
@@ -29,7 +28,7 @@ public class Gui extends JFrame {
 	private double sizeX;
 	private double sizeY;
 	
-	private double tab[][];
+	public double tab[][];
 	
 	private Dimension dimension;
 	
@@ -52,9 +51,16 @@ public class Gui extends JFrame {
 	    
 	    dashbordPanel = new DashbordPanel(screenWidth);
 	    container = new JPanel();
-		
+
 		setLayout();
 	    add();
+	}
+
+	public Gui(double tab[][],double sizeX, double sizeY,int test) { // don't delete, this constructor is for @DeAntoine Test
+	    this.tab = tab;
+	    this.sizeX = sizeX;
+	    this.sizeY = sizeY;
+
 	}
 	
 	public void setLayout() {
@@ -70,31 +76,27 @@ public class Gui extends JFrame {
 	
 	//method for display the map
 	public void Display(){
-		
-		mapTab = tab;
+		setSize((int)sizeX,(int)(sizeY*1.1));
 	    JPanel panneau = new JPanel(){
-	        /**
-			 * 
-			 */
 			private static final long serialVersionUID = 1L;
 
 			protected void paintComponent(Graphics g){
 	            super.paintComponent(g);
 	            g.setColor(Color.black);
 	            int y,x;
-	            for (y=0; y<sizeX; y++){  
-	            	for (x=0; x<sizeY; x++){
-	            		if(mapTab[x][y]==2) { // sand 
-	     					g.setColor(GOLDSAND);
+	            for (y=0; y<sizeY; y++){  
+	            	for (x=0; x<sizeX; x++){
+	            		if(tab[x][y]==2) { // sand 
+	            			g.setColor(GOLDSAND);
 	     				}
-	            		else if(mapTab[x][y]==1){ //land
-	     					g.setColor(DARKGREEN);
+	            		else if(tab[x][y]==1){ //land
+	            			g.setColor(DARKGREEN);
 	            		}
-	     				else if (mapTab[x][y]==0){ //water
-	     					g.setColor(BLUE);
+	     				else if (tab[x][y]==0){ //water
+	            			g.setColor(BLUE);
 	     				}
 	     				else{ // if the value is not recognized 
-	     					System.out.println("Error ocured in Gui.java: \n Unknow value of map box :" + mapTab[x][y] );
+	     					System.out.println("Error ocured in Gui.java: \n Unknow value of map box :" + tab[x][y] );
 	     					g.setColor(Color.PINK);
 	     				}
 	     	  			g.fillRect(x, y, 1, 1);
@@ -104,8 +106,11 @@ public class Gui extends JFrame {
 	    };
 	    
 	    //to center the map regardless of computer screen resolution
-	    panneau.setBounds((int)((screenWidth/2)-sizeX/2),95,GParameter.mapWidth,GParameter.mapHeight);
-	    container.add(panneau);
+	    //panneau.setBounds((int)((screenWidth/2)-sizeX/2),95,GParameter.mapWidth,GParameter.mapHeight);
+	    //container.add(panneau);
+	    add(panneau);
+	    setVisible(true);
+	    show(); //affiche la fenetre
 	}
 	
 	public void add(){
