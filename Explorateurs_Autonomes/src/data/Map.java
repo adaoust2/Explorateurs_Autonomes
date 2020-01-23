@@ -34,7 +34,7 @@ public class Map {
 	
 	
 	
-	public void generateNewMap() {
+	public void generateNewMap() { // new map generation you know
 		tabOfMap = new double[(int)width][(int)height];
 		int rand;
 		//rand = (int) (100*Math.random()%3);

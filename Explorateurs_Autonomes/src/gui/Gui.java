@@ -24,7 +24,7 @@ public class Gui extends JFrame {
 	public Color DARKGREEN = new Color(0,100,0);
 	public Color BLUE = new Color(0,0,255);
 	public Color GOLDSAND = new Color(255,215,0);
-	public Color STEELGREY = new Color(175, 175, 175);
+	public Color STEELGREY = new Color(175, 175, 175); // new color 
 	public Color IMPERIALGREEN = new Color(0, 86, 27);
 	private double sizeX;
 	private double sizeY;
