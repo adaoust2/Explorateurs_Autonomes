@@ -26,6 +26,7 @@ public class Gui extends JFrame {
 	public Color GOLDSAND = new Color(255,215,0);
 	public Color STEELGREY = new Color(175, 175, 175); // new color 
 	public Color IMPERIALGREEN = new Color(0, 86, 27);
+	public Color DARKCHOCOLATE = new Color(90,58,34);
 	private double sizeX;
 	private double sizeY;
 	
@@ -87,7 +88,10 @@ public class Gui extends JFrame {
 	            int y,x;
 	            for (y=0; y<sizeY; y++){  
 	            	for (x=0; x<sizeX; x++){
-	            		if(tab[x][y]==4) { // mountain 
+	            		if(tab[x][y]==5) { // mountain 
+	            			g.setColor(DARKCHOCOLATE);
+	     				}
+	            		else if(tab[x][y]==4) { // mountain 
 	            			g.setColor(STEELGREY);
 	     				}
 	            		else if(tab[x][y]==3) { // forest 
