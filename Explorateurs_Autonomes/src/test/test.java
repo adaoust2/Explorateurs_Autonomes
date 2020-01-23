@@ -22,7 +22,7 @@ public class test {
 		
 	}
 	public static void testMap() {
-		Map map = new Map(800,600);
+		Map map = new Map();
 		map.generateNewMap();
 		System.out.println("map size x=" + map.getWidth() + " and y= " + map.getHeight());
 		double tab[][] = map.getTabOfMap();
