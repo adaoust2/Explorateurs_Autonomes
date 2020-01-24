@@ -15,6 +15,7 @@ public class Map {
 	private double tabOfMap[][]; 
 	private ArrayList<Monster> listOfMonster = new ArrayList<Monster>();
 	private int sizeOfPiwel=20;
+	int difficultyLevel = 1;
 	
 	
 	
@@ -40,7 +41,8 @@ public class Map {
 		int rand;
 		//rand = (int) (100*Math.random()%3);
 		int type;
-		makeZone(tabOfMap,-1,0,0);
+		makeZone(tabOfMap,-1,0,0); // pink pixel at left-top 
+		generateMonster();
 		for (int y=0; y<height; y=y+sizeOfPiwel) { 
 			for (int x=sizeOfPiwel; x<width; x=x+sizeOfPiwel) {
 				type=-1;
@@ -69,16 +71,22 @@ public class Map {
 
 				}
 				
-				makeZone(tabOfMap,type,x,y);
-
-				
-				
-				
-				
+				makeZone(tabOfMap,type,x,y);				
 			}
 		}
 	}
 	
+	private void generateMonster() {
+		Monster m1;
+		for(int i=0;i<3*difficultyLevel; i++) {
+			m1 = new Monster(20*difficultyLevel, (int)((Math.random()*10000)%width*0.6)+width*0.2, (int)((Math.random()*10000)%height*0.6)+height*0.2, 2*difficultyLevel,"Wolf");
+			listOfMonster.add(m1);
+		}
+
+		
+		
+	}
+
 	public void makeZone(double tabOfMap[][],int type,int indiceX, int indiceY) {
 		for (int y=indiceY; y<indiceY+sizeOfPiwel; y++) { 
 			for (int x=indiceX; x<indiceX+sizeOfPiwel; x++) {
@@ -90,91 +98,6 @@ public class Map {
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	// deprecate 
-	public void oldGenerateNewMap() {
-		tabOfMap = new double[(int)width][(int)height];
-		//implementation of each box of the table
-		
-		int type =(int)(Math.random()%1) + 1; // determine the type of the isle 
-		int value;
-		boolean isSand = false;
-		double margeLeft=0;
-		double margeRight=0;
-		int mountain;
-		
-		switch (type) { // initialize value in function of the type 
-			case 1:
-				margeLeft = width*0.48;
-				margeRight = width*0.52;	
-				mountain = (int) (100*Math.random()%12+7);
-				break;
-			default:System.out.println("type is not recognized, you should check in class Map.java at the method generateNewMap ");
-			System.out.println("type is :" + type);break;
-		}
-		for (int y=0; y<height; y++) { 
-			if(y>height*0.05&&y<height*0.95) {
-				switch (type) { // initialize value in function of the type 
-					case 1:
-						if (y<height/2){
-							margeLeft = margeLeft*0.987;
-							margeRight = margeRight+(width-margeRight)*0.013;
-						}
-						else {
-							if(margeLeft<width/2) {
-								margeLeft = margeLeft*1.011;
-							}
-							if(margeRight>width/2) {
-								margeRight = margeRight-(width-margeRight)*0.011;
-							}
-						}
-						break;
-					default:
-						System.out.println("type is not recognized, you should check in class Map.java at the method generateNewMap ");
-						System.out.println("type is :" + type);break;
-				}
-			}
-			if(isSand==false && y>height*0.8) {
-				 if((Math.random()*100)%100<4) {
-					 isSand=true;
-				 }
-			}
-			for (int x=0; x<width; x++) {
-				value = -1;
-				if(x<width*0.05||y<height*0.05||x>width*0.95||y>height*0.95) {
-					value=0; // water
-				}
-				else {
-					switch (type) {
-						case 1:
-							if (x>margeLeft && x< margeRight) {
-								if(isSand==true) {
-									value = 2; // land
-								}
-								else {
-									value = 1; // land	
-								}
-							}
-							else { 
-								value = 0; // water
-							}
-							break;
-						default:System.out.println("type is not recognized, you should check in class Map.java at the method generateNewMap ");
-						System.out.println("type is :" + type);break;
-					}
-				}
-				tabOfMap[x][y]=value; 
-			}
-		}
-	}
-
 	
 	
 	// after this their is all the AUTO-generate getter and setter
@@ -197,6 +120,31 @@ public class Map {
 	public double[][] getTabOfMap() {
 		return tabOfMap;
 	}
+
+	public ArrayList<Monster> getListOfMonster() {
+		return listOfMonster;
+	}
+
+	public void setListOfMonster(ArrayList<Monster> listOfMonster) {
+		this.listOfMonster = listOfMonster;
+	}
+
+	public int getSizeOfPiwel() {
+		return sizeOfPiwel;
+	}
+
+	public void setSizeOfPiwel(int sizeOfPiwel) {
+		this.sizeOfPiwel = sizeOfPiwel;
+	}
+
+	public int getDifficultyLevel() {
+		return difficultyLevel;
+	}
+
+	public void setDifficultyLevel(int difficultyLevel) {
+		this.difficultyLevel = difficultyLevel;
+	}
+
 	
 	
 	

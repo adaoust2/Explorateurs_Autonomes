@@ -2,13 +2,16 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import data.GParameter;
-/* @author antoine
+import data.Monster;
+/* @author DeAntoine
  * @author bjmeo
  * this class is for grafical display 
  */
@@ -29,6 +32,7 @@ public class Gui extends JFrame {
 	public Color DARKCHOCOLATE = new Color(90,58,34);
 	private double sizeX;
 	private double sizeY;
+	BufferedImage bimg;
 	
 	public double tab[][];
 	
@@ -39,9 +43,10 @@ public class Gui extends JFrame {
 	
 	private DashbordPanel dashbordPanel;
 	private JPanel container;
+	private ArrayList<Monster> listOfMonster ;
+ 
 	
 	public Gui(double tab[][],double sizeX, double sizeY) {
-		
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;
 		this.tab = tab;
@@ -58,8 +63,9 @@ public class Gui extends JFrame {
 	    add();
 	}
 
-	public Gui(double tab[][],double sizeX, double sizeY,int test) { // don't delete, this constructor is for @DeAntoine Test
-	    this.tab = tab;
+	public Gui(double tab[][],double sizeX, double sizeY,int test,ArrayList<Monster> listOfMonster) { // don't delete, this constructor is for @DeAntoine Test
+		this.listOfMonster = listOfMonster;
+		this.tab = tab;
 	    this.sizeX = sizeX;
 	    this.sizeY = sizeY;
 
@@ -115,6 +121,13 @@ public class Gui extends JFrame {
 	     			}
 
 	     		}
+	            g.setColor(Color.RED);
+	            for(int z = 0;z < listOfMonster.size() ; z++) {
+	            	g.drawImage("/")
+	            	g.fillOval((int)(listOfMonster.get(z).getPosX())-10,(int)(listOfMonster.get(z).getPosY())-10, 20, 20);
+	            }
+	            
+	            
 	        }
 	    };
 	    

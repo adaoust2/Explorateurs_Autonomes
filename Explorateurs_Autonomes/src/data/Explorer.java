@@ -7,6 +7,15 @@ public class Explorer extends Agent{
 	private ArrayList<Item> items = new ArrayList<Item>();
     private ArrayList<Bonus> bonus = new ArrayList<Bonus>();
     
+    
+    
+	public Explorer(String name, float lifePoint, double posX, double posY, float damage, ArrayList<Item> items,
+			ArrayList<Bonus> bonus) {
+		super(name, lifePoint, posX, posY, damage);
+		this.items = items;
+		this.bonus = bonus;
+	}
+
 	public ArrayList<Item> getItems() {
 		return items;
 	}
@@ -40,8 +49,5 @@ public class Explorer extends Agent{
 	}
 	    
 
-	public Explorer() {
-		// TODO Auto-generated constructor stub
-	}
 
 }

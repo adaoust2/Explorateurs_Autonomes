@@ -10,10 +10,20 @@ public abstract class Agent {
 	private float damage;
 	
 	
+	
+	
+	public Agent(String name, float lifePoint, double posX, double posY, float damage) {
+		super();
+		this.name = name;
+		this.lifePoint = lifePoint;
+		this.posX = posX;
+		this.posY = posY;
+		this.damage = damage;
+	}
+
 	public String getName() {
 		return name;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;
@@ -70,8 +80,5 @@ public abstract class Agent {
 	}
 
 
-	public Agent() {
-		// TODO Auto-generated constructor stub
-	}
 
 }

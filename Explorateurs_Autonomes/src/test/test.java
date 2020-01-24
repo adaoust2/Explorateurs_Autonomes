@@ -26,7 +26,7 @@ public class test {
 		map.generateNewMap();
 		System.out.println("map size x=" + map.getWidth() + " and y= " + map.getHeight());
 		double tab[][] = map.getTabOfMap();
-		Gui gui = new Gui(tab,map.getWidth(),map.getHeight(),3);
+		Gui gui = new Gui(tab,map.getWidth(),map.getHeight(),3,map.getListOfMonster());
 		gui.Display();
 		
 	}
