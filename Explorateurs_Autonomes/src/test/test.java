@@ -11,18 +11,18 @@ import java.util.*;
  * this class contain the main
  * this class is for launch the app and make unit test
  */
-public class Test {
+public class test {
 	public static void main(String[] argv) {
 		System.out.println("Test Started");
 		// if you want to make your own test just comment my line testMap and create your own fonction for your test
-		//testMap();
-		testMenu();
+		testMap();
+		//testMenu();
 		
 		
 		
 	}
 	public static void testMap() {
-		Map map = new Map(800,600);
+		Map map = new Map(); // default constructor
 		map.generateNewMap();
 		System.out.println("map size x=" + map.getWidth() + " and y= " + map.getHeight());
 		double tab[][] = map.getTabOfMap();
