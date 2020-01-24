@@ -39,6 +39,7 @@ public class Menu extends JPanel{
 
 	
 	public Menu() {
+		
 		menu.setSize(GParameter.WIDTH, GParameter.HEIGH);
 		menu.setTitle("Exploreur");
 
