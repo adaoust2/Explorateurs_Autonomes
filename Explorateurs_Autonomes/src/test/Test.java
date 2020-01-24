@@ -11,12 +11,12 @@ import java.util.*;
  * this class contain the main
  * this class is for launch the app and make unit test
  */
-public class test {
+public class Test {
 	public static void main(String[] argv) {
 		System.out.println("Test Started");
 		// if you want to make your own test just comment my line testMap and create your own fonction for your test
-		testMap();
-		//testMenu();
+		//testMap();
+		testMenu();
 		
 		
 		
