@@ -3,7 +3,7 @@ package data;
 public class Monster extends Agent {
 
 	private String type;
-	private String name;
+	
 	
 	public String getType() {
 		return type;
@@ -13,20 +13,17 @@ public class Monster extends Agent {
 		this.type = type;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public void Attack(Explorer explorer) {
 		
 	}
-	
-	public Monster() {
-		// TODO Auto-generated constructor stub
+
+	public Monster(String name,String image,float lifePoint, double posX, double posY,float damage,String type) {
+		super();
+		this.type = type;
+		
 	}
 
+	
+	
+	
 }

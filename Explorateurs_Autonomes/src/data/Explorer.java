@@ -40,8 +40,10 @@ public class Explorer extends Agent{
 	}
 	    
 
-	public Explorer() {
-		// TODO Auto-generated constructor stub
+	public Explorer(String name,String image,float lifePoint, double posX, double posY,float damage,ArrayList<Item> items, ArrayList<Bonus> bonus) {
+		super();
+		this.items = items;
+		this.bonus = bonus;
 	}
 
 }

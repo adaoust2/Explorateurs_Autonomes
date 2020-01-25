@@ -71,7 +71,13 @@ public abstract class Agent {
 
 
 	public Agent() {
-		// TODO Auto-generated constructor stub
+		this.damage = damage;
+		this.image = image;
+		this.lifePoint = lifePoint;
+		this.name = name;
+		this.posX = posX;
+		this.posY = posY;
+		
 	}
 
 }
