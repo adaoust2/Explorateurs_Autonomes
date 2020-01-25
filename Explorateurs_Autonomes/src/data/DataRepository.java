@@ -62,7 +62,7 @@ public class DataRepository {
 	 
 	Monster mons3 = new Monster("Serpent","image",0,0,0,4,"Ursidés");
 
-	
+	 
 
 
 	
