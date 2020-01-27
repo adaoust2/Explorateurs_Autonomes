@@ -61,7 +61,7 @@ public class DashbordPanel extends JPanel{
 				g2.drawImage(type, x,y,GParameter.DIM_X,GParameter.DIM_Y,this);
 				g2.drawString("->"+GParameter.exploName[k],x+GParameter.DIM_X,(y+GParameter.DIM_Y)-10);
 				x+=GParameter.DIM_X*3+30;
-				k+=1;
+				k+=1; 
 			}
 			y+=GParameter.DIM_Y;
 			x=0;

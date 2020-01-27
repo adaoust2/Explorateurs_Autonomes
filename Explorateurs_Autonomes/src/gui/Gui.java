@@ -53,7 +53,7 @@ public class Gui extends JFrame {
 		this.sizeY = sizeY;
 		this.tab = tab;
 		
-	    
+	     
 	}
 
 	public Gui(double tab[][],double sizeX, double sizeY,int test,ArrayList<Monster> listOfMonster) { // don't delete, this constructor is for @DeAntoine Test

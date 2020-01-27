@@ -15,5 +15,5 @@ public class SimulationUtility {
 			System.err.println("-- Can not read the image file ! --");
 			return null;
 		}
-	}
+	} 
 }

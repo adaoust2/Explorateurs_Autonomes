@@ -30,35 +30,35 @@ public class DataRepository {
 	
 	// objects instantiation (EXPLORER) 
 	
-	private ArrayList<Item> items = new ArrayList<Item>();
-	private ArrayList<Bonus> bonus = new ArrayList<Bonus>();
-	Explorer Ex1 = new Explorer("Patrick","image",0,0,0,4,items,bonus);
-	
-	Explorer Ex2 = new Explorer("Bob","image",0,0,0,3,items,bonus);
-	
-	Explorer Ex3 = new Explorer("Farouja","image",0,0,0,5,items,bonus);
-	
-	Explorer Ex4 = new Explorer("babouche","image",0,0,0,4,items,bonus);
-	
-	Explorer Ex5 = new Explorer("Daryl","image",0,0,0,1,items,bonus);
-	
-	Explorer Ex6 = new Explorer("Sonic","image",0,0,0,2,items,bonus);
-	
-	Explorer Ex7 = new Explorer("Arya","image",0,0,0,4,items,bonus);
-	
-	Explorer Ex8 = new Explorer("Rocky","image",0,0,0,5,items,bonus);
-	
-	Explorer Ex9 = new Explorer("Rosa","image",0,0,0,3,items,bonus);
-	
-	Explorer Ex10 = new Explorer("Jane","image",0,0,0,2,items,bonus);
-	
-	// Objects instantiation ( MONSTER )
-	
-	Monster mons1 = new Monster("Lion","image",0,0,0,5,"Félins");
-	
-	Monster mons2 = new Monster("Serpent","image",0,0,0,4,"reptiles");
-	 
-	Monster mons3 = new Monster("Serpent","image",0,0,0,4,"Ursidés");
+//	private ArrayList<Item> items = new ArrayList<Item>();
+//	private ArrayList<Bonus> bonus = new ArrayList<Bonus>();
+//	Explorer Ex1 = new Explorer("Patrick","image",0,0,0,4,items,bonus);
+//	
+//	Explorer Ex2 = new Explorer("Bob","image",0,0,0,3,items,bonus);
+//	
+//	Explorer Ex3 = new Explorer("Farouja","image",0,0,0,5,items,bonus);
+//	
+//	Explorer Ex4 = new Explorer("babouche","image",0,0,0,4,items,bonus);
+//	
+//	Explorer Ex5 = new Explorer("Daryl","image",0,0,0,1,items,bonus);
+//	
+//	Explorer Ex6 = new Explorer("Sonic","image",0,0,0,2,items,bonus);
+//	
+//	Explorer Ex7 = new Explorer("Arya","image",0,0,0,4,items,bonus);
+//	
+//	Explorer Ex8 = new Explorer("Rocky","image",0,0,0,5,items,bonus);
+//	
+//	Explorer Ex9 = new Explorer("Rosa","image",0,0,0,3,items,bonus);
+//	
+//	Explorer Ex10 = new Explorer("Jane","image",0,0,0,2,items,bonus);
+//	
+//	// Objects instantiation ( MONSTER )
+//	
+//	Monster mons1 = new Monster("Lion","image",0,0,0,5,"Félins");
+//	
+//	Monster mons2 = new Monster("Serpent","image",0,0,0,4,"reptiles");
+//	 
+//	Monster mons3 = new Monster("Serpent","image",0,0,0,4,"Ursidés");
  
 	 
 }

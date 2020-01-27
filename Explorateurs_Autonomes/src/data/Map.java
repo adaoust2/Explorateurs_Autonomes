@@ -9,7 +9,7 @@ import java.util.ArrayList;
 */
 
 
-public class Map {
+public class Map { 
 	private double width; // X value 
 	private double height; // Y value
 	private double tabOfMap[][]; 
