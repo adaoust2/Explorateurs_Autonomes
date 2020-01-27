@@ -3,10 +3,12 @@ package gui;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 
 import javax.swing.JPanel;
 
 import data.GParameter;
+import elements.SimulationUtility;
 
 
 
@@ -20,6 +22,8 @@ public class DashbordPanel extends JPanel{
 	
 	private RenderingThread renderingThread = new RenderingThread(); 
 	
+	private Image type;
+	
 	public DashbordPanel(int width){
 		
 		this.width = width;
@@ -31,7 +35,8 @@ public class DashbordPanel extends JPanel{
 		this.setDoubleBuffered(true);
 		this.setLayout(null);
 		this.setBounds(0, 0, width, 90);
-		this.setBackground(new Color(0, 1, 36));
+		this.setBackground(new Color(48, 48, 48));
+		//this.setBackground(Color.LIGHT_GRAY);
 		this.setVisible(true);
 	}
 	
@@ -40,9 +45,28 @@ public class DashbordPanel extends JPanel{
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D) g;
 		drawTime(g2);
+		drawExplo(g2);
 		g.dispose();
 	}
 	
+	public void drawExplo(Graphics g){
+		//Sonic
+		Graphics2D g2 = (Graphics2D) g;
+		int x=0,y=0,k=0;
+		
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<3;j++) {
+				
+				type = SimulationUtility.readImage("src/Pictures/"+GParameter.exploName[k]+".png");
+				g2.drawImage(type, x,y,GParameter.DIM_X,GParameter.DIM_Y,this);
+				g2.drawString("->"+GParameter.exploName[k],x+GParameter.DIM_X,(y+GParameter.DIM_Y)-10);
+				x+=GParameter.DIM_X*3+30;
+				k+=1;
+			}
+			y+=GParameter.DIM_Y;
+			x=0;
+		}
+	}
 	public void unifiedTime(){
 		secondes++;
 		if(secondes==59){

@@ -15,7 +15,7 @@ public class Map {
 	private double tabOfMap[][]; 
 	private ArrayList<Monster> listOfMonster = new ArrayList<Monster>();
 	private int sizeOfPiwel=20;
-	int difficultyLevel = 1;
+	int difficultyLevel = 1; 
 	
 	
 	
@@ -46,20 +46,20 @@ public class Map {
 		for (int y=0; y<height; y=y+sizeOfPiwel) { 
 			for (int x=sizeOfPiwel; x<width; x=x+sizeOfPiwel) {
 				type=-1;
-				if(x>width*0.42&&x<width*0.52&&y<height*0.65&&y>height*0.6||x<0.7*width&&x>0.68*width&&y<height*0.35&&y>height*0.25) {/*&&y>height*0.2&&y<height*0.28||x==y+sizeOfPiwel+width/2&&y>height*0.2&&y<height*0.28||x==y+sizeOfPiwel*2+width/2&&y>height*0.2&&y<height*0.28) {*/
+				if(x>width*0.42&&x<width*0.52&&y<height*0.65&&y>height*0.6||x<0.7*width&&x>0.68*width && y<height*0.35 &&y>height*0.25) {/*&&y>height*0.2&&y<height*0.28||x==y+sizeOfPiwel+width/2&&y>height*0.2&&y<height*0.28||x==y+sizeOfPiwel*2+width/2&&y>height*0.2&&y<height*0.28) {*/
 					type=5; // bridge
 				}
-				else if(y<=height*0.08||y>=height*0.9||x<=width*0.08||x>=width*0.9||(x/width+y/height)==1&& x>width*0.5||(x/width+y/height)<1.02&&(x/width+y/height)>0.95 && x>width*0.45||x>width*0.45&&x<width*0.5&&y>height*0.5) {	
+				else if(y<=height*0.08||y>=height*0.9||x<=width*0.08||x>=width*0.9||(x/width+y/height)==1 && x>width*0.5||(x/width+y/height)<1.02 && (x/width+y/height)>0.95 && x>width*0.45||x>width*0.45&&x<width*0.5&&y>height*0.5) {	
 					type=0; // water
 				}
-				else if(y>=height*0.87 || y>=height*0.85&&x>=width*0.15&&x<=width*0.85 || y>=height*0.82&&x>=width*0.25&&x<=width*0.75 || y>=height*0.8&&x>=width*0.35&&x<=width*0.65){
+				else if(y>=height*0.87 || y>=height*0.85&&x>=width*0.15&&x<=width*0.85 || y>=height*0.82 && x>=width*0.25 && x<=width*0.75 || y>=height*0.8 && x>=width*0.35 && x<=width*0.65){
 					type=2; // sand 
 				}
-				else if(y<=height*0.5&&y>=height*0.4&&x>=width*0.65&&x<=width*0.78||y<=height*0.5&&y>=height*0.45&&x>=width*0.55&&x<=width*0.88||y<=height*0.55&&y>=height*0.5&&x>=width*0.5&&x<=width*0.88||y<=height*0.6&&y>=height*0.55&&x>=width*0.58&&x<=width*0.83||y<=height*0.65&&y>=height*0.6&&x>=width*0.65&&x<=width*0.72) {
+				else if(y<=height*0.5 && y>=height*0.4 && x>=width*0.65&&x<=width*0.78||y<=height*0.5 && y>=height*0.45 && x>=width*0.55 && x<=width*0.88||y<=height*0.55 && y>=height*0.5&&x>=width*0.5&&x<=width*0.88||y<=height*0.6&&y>=height*0.55&&x>=width*0.58&&x<=width*0.83||y<=height*0.65&&y>=height*0.6&&x>=width*0.65&&x<=width*0.72) {
 					type = 3; // forest
 				}
-				else if(y>=height*0.15&&y<=height*0.4&&x>=width*0.2&&x<=width*0.45) {
-					if(y-sizeOfPiwel<height*0.15&&x+sizeOfPiwel>width*0.45||y+sizeOfPiwel>height*0.4&&x+sizeOfPiwel>width*0.45||y-sizeOfPiwel<height*0.15&&x-sizeOfPiwel<width*0.2||y+sizeOfPiwel>height*0.4&&x-sizeOfPiwel<width*0.2) {
+				else if(y>=height*0.15 && y<=height*0.4 && x>=width*0.2 && x<=width*0.45) {
+					if(y-sizeOfPiwel<height*0.15 && x+sizeOfPiwel>width*0.45||y+sizeOfPiwel>height*0.4 && x+sizeOfPiwel>width*0.45||y-sizeOfPiwel<height*0.15 && x-sizeOfPiwel<width*0.2||y+sizeOfPiwel>height*0.4&&x-sizeOfPiwel<width*0.2) {
 						type= 1 ; // land
 					}
 					else {
