@@ -1,18 +1,22 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-import java.awt.Dimension;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import data.DataRepository;
+import data.Explorer;
 import data.GParameter;
 import data.Monster;
-import elements.SimulationUtility;
+import data.elements.SimulationUtility;
+import data.generation.GenerateAgents;
+import process.actions.InfoActions;
+
 /* @author DeAntoine
  * @author bjmeo
  * this class is for grafical display 
@@ -46,6 +50,11 @@ public class Gui extends JFrame {
 	private DashbordPanel dashbordPanel;
 	private JPanel container;
 	private ArrayList<Monster> listOfMonster ;
+	private DataRepository dataRepository = DataRepository.getInstance();
+	private ArrayList<Explorer> listOfExplorer ;
+	private GenerateAgents gen ;
+	
+	private InfoActions infoActions;
  
 	
 	public Gui(double tab[][],double sizeX, double sizeY) {
@@ -53,7 +62,6 @@ public class Gui extends JFrame {
 		this.sizeY = sizeY;
 		this.tab = tab;
 		
-	     
 	}
 
 	public Gui(double tab[][],double sizeX, double sizeY,int test,ArrayList<Monster> listOfMonster) { // don't delete, this constructor is for @DeAntoine Test
@@ -69,8 +77,12 @@ public class Gui extends JFrame {
 	    
 	    dashbordPanel = new DashbordPanel(screenWidth);
 	    container = new JPanel();
+	    gen = new GenerateAgents();
+	    gen.generateExplorer();
+	    infoActions = new InfoActions();
 	    
-
+	    
+	    
 		setLayout();
 	    add();
 
@@ -92,7 +104,6 @@ public class Gui extends JFrame {
 		setSize((int)(sizeX*1.1),(int)(sizeY*1.1));
 	    JPanel panneau = new JPanel(){
 			private static final long serialVersionUID = 1L;
-
 			protected void paintComponent(Graphics g){
 	            super.paintComponent(g);
 	            g.setColor(Color.black);
@@ -125,45 +136,20 @@ public class Gui extends JFrame {
 	            			g.setColor(BLUE);
 	     				}
 	     				else{ // if the value is not recognized 
-	     					System.out.println("Error ocured in Gui.java: \n Unknow value of map box :" + tab[x][y] );
+	     					//System.out.println("Error ocured in Gui.java: \n Unknow value of map box :" + tab[x][y] );
 	     					g.setColor(Color.PINK);
 	     				}
 	     	  			g.fillRect(x, y, 1, 1);
-	     	  			
-	     	  			
-
-            			
-	            		//posX+=20;
 	     			}
-	            	
-	            	//posX=0;
-	            	//posY+=20;
- 
 	     		}
-	        
- 	  				type = SimulationUtility.readImage("src/Pictures/Sonic.png");
-        			g.drawImage(type, 200,200,GParameter.DIM_X,GParameter.DIM_Y,this);
-        			
-        			type = SimulationUtility.readImage("src/Pictures/Jane.png");
-        			g.drawImage(type, 100,200,GParameter.DIM_X,GParameter.DIM_Y,this);
-        			
-        			type = SimulationUtility.readImage("src/Pictures/Arya.png");
-        			g.drawImage(type, 200,0,GParameter.DIM_X,GParameter.DIM_Y,this);
-        			
-        			type = SimulationUtility.readImage("src/Pictures/Daryl.png");
-        			g.drawImage(type, 0,200,GParameter.DIM_X,GParameter.DIM_Y,this);
-        			
-        			type = SimulationUtility.readImage("src/Pictures/Sonic.png");
-        			g.drawImage(type, 200,200,GParameter.DIM_X,GParameter.DIM_Y,this);
- 	  			
+	            displayExplorer(g);
 	            g.setColor(Color.RED);
-	            for(int z = 0;z < listOfMonster.size() ; z++) {
+	            for(int z = 0;z < listOfMonster.size() ; z++){
 	            	
 	            	type = SimulationUtility.readImage("src/Pictures/bear.png");
         			g.drawImage(type, (int)(listOfMonster.get(z).getPosX())-10,(int)(listOfMonster.get(z).getPosY())-10,GParameter.DIM_X,GParameter.DIM_Y,this);
 	            	//g.fillOval((int)(listOfMonster.get(z).getPosX())-10,(int)(listOfMonster.get(z).getPosY())-10, 20, 20);
 	            }
-	            
 	            
 	        }
 	    };
@@ -171,6 +157,8 @@ public class Gui extends JFrame {
 	    //to center the map regardless of computer screen resolution
 	    panneau.setBounds((int)((screenWidth/2)-sizeX/2),95,GParameter.mapWidth,GParameter.mapHeight);
 	    //add(panneau);
+	    panneau.addMouseListener(infoActions);
+	    panneau.addMouseMotionListener(infoActions);
 	    container.add(panneau);
 	    setVisible(true);
 	}
@@ -179,6 +167,16 @@ public class Gui extends JFrame {
 	    container.add(dashbordPanel);
 	    this.setContentPane(container);
 	    setVisible(true);
+	}
+	
+	public void displayExplorer(Graphics g){
+		
+		listOfExplorer = dataRepository.getListOfExplorer();
+		
+		for(int i=0;i<5;i++){
+			type = SimulationUtility.readImage(listOfExplorer.get(i).getImage());
+			g.drawImage(type, (int)listOfExplorer.get(i).getPosX(),(int)listOfExplorer.get(i).getPosY(),GParameter.DIM_X,GParameter.DIM_Y,this);			
+		}
 	}
 	
 }

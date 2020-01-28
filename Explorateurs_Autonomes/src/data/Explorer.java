@@ -9,9 +9,14 @@ public class Explorer extends Agent{
     
     
     
-	public Explorer(String name, float lifePoint, double posX, double posY, float damage, ArrayList<Item> items,
-			ArrayList<Bonus> bonus) {
+	public Explorer(String name, float lifePoint, double posX, double posY, float damage) {
 		super(name, lifePoint, posX, posY, damage);
+	}
+
+	public Explorer(String name, float lifePoint, double posX, double posY, float damage, ArrayList<Item> items,
+			ArrayList<Bonus> bonus){
+		
+		this(name, lifePoint, posX, posY, damage);
 		this.items = items;
 		this.bonus = bonus;
 	}
