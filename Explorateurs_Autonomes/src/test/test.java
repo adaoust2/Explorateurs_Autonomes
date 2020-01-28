@@ -3,6 +3,7 @@ package test;
 import data.Map;
 import gui.Gui;
 import gui.Menu;
+import gui.SelectionMenu;
 
 import java.util.*;
 
@@ -15,8 +16,8 @@ public class test {
 	public static void main(String[] argv) {
 		System.out.println("Test Started");
 		// if you want to make your own test just comment my line testMap and create your own fonction for your test
-		testMap();
-		//testMenu();
+		//testMap();
+		testMenu();
 		
 		
 		
@@ -32,6 +33,9 @@ public class test {
 	}
 	public static void testMenu() {
 		Menu menu = new Menu();
+		//menu.refresh();
+		//SelectionMenu sm= new SelectionMenu();
+		//sm.selectPersonnage();
 	}
 
 	
