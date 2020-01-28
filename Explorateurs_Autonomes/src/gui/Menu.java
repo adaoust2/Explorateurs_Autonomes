@@ -56,7 +56,6 @@ public class Menu extends JPanel implements ActionListener{
 		menu.setSize(GParameter.WIDTH, GParameter.HEIGH);
 		menu.setTitle("Exploreur");
 
-
 		menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		try {
 			back=ImageIO.read(new File("src/Pictures/explo1.jpeg"));

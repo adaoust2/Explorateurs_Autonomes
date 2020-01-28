@@ -26,6 +26,7 @@ public class SelectionMenu extends JPanel{
 	private JPanel content = new JPanel();
 	private Image back;
 	
+	
 	public SelectionMenu() {
 		try {
 			back=ImageIO.read(new File("src/Pictures/fond2.jpg"));
