@@ -18,7 +18,7 @@ public class Map {
 	int difficultyLevel = 1; 
 	
 	
-	
+	 
 	
 	
 	public Map() { //default constructor 

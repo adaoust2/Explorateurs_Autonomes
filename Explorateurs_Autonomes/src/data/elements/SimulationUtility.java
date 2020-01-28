@@ -21,6 +21,6 @@ public class SimulationUtility {
 	public static int randomPoint(int min, int max){
 		Random rand = new Random(); 
 		int stat = rand.nextInt((max - min) + 1) + min;
-		return stat;
+		return stat; 
 	}
 }

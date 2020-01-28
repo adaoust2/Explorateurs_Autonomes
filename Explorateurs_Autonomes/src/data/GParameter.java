@@ -33,7 +33,7 @@ public class GParameter {
 	
 	public static final Color[] ISLE_COLOR = {DARKCHOCOLATE,STEELGREY,IMPERIALGREEN,GOLDSAND,DARKGREEN,BLUE};
 	
-	public static final int nbExplo  = 9;
+	public static final int nbExplo  = 9; 
 	public static final int DIM_X = 30;
 	public static final int DIM_Y = 30;
 	

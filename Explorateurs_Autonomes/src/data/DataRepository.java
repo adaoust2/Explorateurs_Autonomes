@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * store all the simulation object 
  * @author Bjmeo
  */
-public class DataRepository {
+public class DataRepository { 
 
 	/**
 	 * The unique instance of the class prepared in an eager way (object created

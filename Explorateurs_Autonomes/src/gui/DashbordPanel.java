@@ -60,7 +60,7 @@ public class DashbordPanel extends JPanel{
 		drawAllCaptions(g2);
 		g2.drawLine(start_X,0, start_X, this.height);
 		if(GParameter.updateInfos)
-			//System.out.println("true");
+			//System.out.println("true"); 
 			drawExplorerInfos(g2);
 		g.dispose();
 	}

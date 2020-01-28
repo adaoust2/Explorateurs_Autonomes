@@ -8,7 +8,7 @@ public class Explorer extends Agent{
     private ArrayList<Bonus> bonus = new ArrayList<Bonus>();
     
     
-    
+     
 	public Explorer(String name, float lifePoint, double posX, double posY, float damage) {
 		super(name, lifePoint, posX, posY, damage);
 	}

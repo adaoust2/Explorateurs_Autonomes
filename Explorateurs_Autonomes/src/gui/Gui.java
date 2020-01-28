@@ -168,7 +168,7 @@ public class Gui extends JFrame {
 	    this.setContentPane(container);
 	    setVisible(true);
 	}
-	
+	 
 	public void displayExplorer(Graphics g){
 		
 		listOfExplorer = dataRepository.getListOfExplorer();

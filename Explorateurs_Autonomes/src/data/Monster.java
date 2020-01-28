@@ -14,7 +14,7 @@ public class Monster extends Agent {
 
 	}
 
-
+ 
 	private static String getRandomName() {
 		String name = "";
 		int rand = (int)(Math.random()*100)%4;
