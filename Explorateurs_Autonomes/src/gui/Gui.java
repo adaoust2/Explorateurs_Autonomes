@@ -131,7 +131,7 @@ public class Gui extends JFrame {
 	            			//type = SimulationUtility.readImage("src/Pictures/land.png");
 	            			g.setColor(DARKGREEN);
 	            		}
-	     				else if (tab[x][y]==0){ //water
+	     				else if (tab[x][y]==0||tab[x][y]==6){ //water
 	     					//type = SimulationUtility.readImage("src/Pictures/water.png");
 	            			g.setColor(BLUE);
 	     				}
