@@ -64,8 +64,9 @@ public class Gui extends JFrame {
 		
 	}
 
-	public Gui(double tab[][],double sizeX, double sizeY,int test,ArrayList<Monster> listOfMonster) { // don't delete, this constructor is for @DeAntoine Test
+	public Gui(double tab[][],double sizeX, double sizeY,int test,ArrayList<Monster> listOfMonster,ArrayList<Explorer> listOfExplorer) { // don't delete, this constructor is for @DeAntoine Test
 		this.listOfMonster = listOfMonster;
+		this.listOfExplorer = listOfExplorer;
 		this.tab = tab;
 	    this.sizeX = sizeX;
 	    this.sizeY = sizeY;
@@ -77,14 +78,10 @@ public class Gui extends JFrame {
 	    
 	    dashbordPanel = new DashbordPanel(screenWidth);
 	    container = new JPanel();
-	    gen = new GenerateAgents();
-	    gen.generateExplorer();
-	    infoActions = new InfoActions();
-	    
-	    
-	    
 		setLayout();
 	    add();
+	    setSize((int)(sizeX*2), (int)(sizeY*2));
+
 
 	}
 	
