@@ -14,7 +14,7 @@ import data.Explorer;
 import data.GParameter;
 import data.Monster;
 import data.elements.SimulationUtility;
-import data.generation.GenerateAgents;
+//import data.generation.GenerateAgents;
 import process.actions.InfoActions;
 
 /* @author DeAntoine
@@ -52,7 +52,7 @@ public class Gui extends JFrame {
 	private ArrayList<Monster> listOfMonster ;
 	private DataRepository dataRepository = DataRepository.getInstance();
 	private ArrayList<Explorer> listOfExplorer ;
-	private GenerateAgents gen ;
+	//private GenerateAgents gen ;
 	
 	private InfoActions infoActions;
  

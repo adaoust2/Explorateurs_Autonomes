@@ -1,5 +1,6 @@
 package test;
 
+import data.Explorer;
 import data.Map;
 import gui.Gui;
 import gui.Menu;
@@ -13,6 +14,7 @@ import java.util.*;
  * this class is for launch the app and make unit test
  */
 public class test {
+	private static ArrayList<Explorer> listOfExplorer;
 	public static void main(String[] argv) {
 		System.out.println("Test Started");
 		// if you want to make your own test just comment my line testMap and create your own fonction for your test
