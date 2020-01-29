@@ -14,7 +14,7 @@ import data.Explorer;
 import data.GParameter;
 import data.Monster;
 import data.elements.SimulationUtility;
-import data.generation.GenerateAgents;
+//import data.generation.GenerateAgents;
 import process.actions.InfoActions;
 
 /* @author DeAntoine
@@ -52,7 +52,7 @@ public class Gui extends JFrame {
 	private ArrayList<Monster> listOfMonster ;
 	private DataRepository dataRepository = DataRepository.getInstance();
 	private ArrayList<Explorer> listOfExplorer ;
-	private GenerateAgents gen ;
+	//private GenerateAgents gen ;
 	
 	private InfoActions infoActions;
  
@@ -139,6 +139,7 @@ public class Gui extends JFrame {
 	     	  			g.fillRect(x, y, 1, 1);
 	     			}
 	     		}
+	            dataRepository.setListOfExplorer(listOfExplorer);
 	            displayExplorer(g);
 	            g.setColor(Color.RED);
 	            for(int z = 0;z < listOfMonster.size() ; z++){
@@ -170,8 +171,10 @@ public class Gui extends JFrame {
 		
 		listOfExplorer = dataRepository.getListOfExplorer();
 		
-		for(int i=0;i<5;i++){
-			type = SimulationUtility.readImage(listOfExplorer.get(i).getImage());
+		for(int i=0;i<listOfExplorer.size();i++){
+			
+			type = SimulationUtility.readImage("src/Pictures/Daryl.png");
+			//type = SimulationUtility.readImage(listOfExplorer.get(i).getImage());
 			g.drawImage(type, (int)listOfExplorer.get(i).getPosX(),(int)listOfExplorer.get(i).getPosY(),GParameter.DIM_X,GParameter.DIM_Y,this);			
 		}
 	}

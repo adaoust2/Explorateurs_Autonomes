@@ -79,7 +79,7 @@ public class Map {
 	private void generateMonster() {
 		Monster m1;
 		for(int i=0;i<3*difficultyLevel; i++) {
-			m1 = new Monster(20*difficultyLevel, (int)((Math.random()*10000)%width*0.6)+width*0.2, (int)((Math.random()*10000)%height*0.6)+height*0.2, 2*difficultyLevel,"Wolf");
+			m1 = new Monster(20*difficultyLevel, (int)((Math.random()*10000)%width*0.6)+width*0.2, (int)((Math.random()*10000)%height*0.6)+height*0.2, 2*difficultyLevel,"Bear");
 			listOfMonster.add(m1);
 		}
 
