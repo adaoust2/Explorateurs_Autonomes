@@ -14,8 +14,8 @@ public class GParameter {
 	public static final Color IMPERIALGREEN = new Color(0, 86, 27);
 	public static final Color DARKCHOCOLATE = new Color(90,58,34);
 	
-	public static int WIDTH = 1600;
-	public static int HEIGH = 900;
+	public static int WIDTH = 1920;
+	public static int HEIGH = 1080;
 	public static int mapWidth = 700;
 	public static int mapHeight = 700;
 	

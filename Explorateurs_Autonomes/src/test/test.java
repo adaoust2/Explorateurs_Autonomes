@@ -22,7 +22,6 @@ public class test {
 		testMenu();
 		
 		
-		
 	}
 	public static void testMap() {
 		Map map = new Map(); // default constructor
