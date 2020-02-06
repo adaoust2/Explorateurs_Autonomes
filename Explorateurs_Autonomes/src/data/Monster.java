@@ -1,5 +1,4 @@
-
-	package data;
+package data;
 
 public class Monster extends Agent {
 
@@ -77,7 +76,5 @@ public class Monster extends Agent {
 	public void setType(String type) {
 		this.type = type;
 	}
-
-
 
 }
