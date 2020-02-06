@@ -49,7 +49,7 @@ public class SelectionMenu extends JPanel{
 		Font fonttitle = new Font("Title", Font.BOLD, 100);
 	    g.setFont(fonttitle);
 	    g.setColor(GParameter.WHITE);
-	    g.drawString("Choose your explorer", 375, 150);
+	    g.drawString("Choose your explorer", 250, 150);
 
 	}
 	

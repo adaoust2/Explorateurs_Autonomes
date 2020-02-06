@@ -78,6 +78,9 @@ public class Monster extends Agent {
 		this.type = type;
 	}
 
+
+
+<<<<<<< HEAD
+=======
 }
-
-
+>>>>>>> branch 'master' of https://github.com/adaoust2/Explorateurs_Autonomes
