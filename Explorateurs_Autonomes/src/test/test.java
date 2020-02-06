@@ -1,11 +1,16 @@
 package test;
 
+<<<<<<< HEAD
+import data.DataRepository;
+=======
+>>>>>>> branch 'master' of https://github.com/adaoust2/Explorateurs_Autonomes
 import data.Explorer;
 import data.Map;
 import gui.Gui;
 import gui.Menu;
 import gui.SelectionMenu;
 
+import java.awt.Container;
 import java.util.*;
 
 
@@ -14,13 +19,21 @@ import java.util.*;
  * this class is for launch the app and make unit test
  */
 public class test {
+<<<<<<< HEAD
+	private static ArrayList<Explorer> listOfExplorer = new ArrayList<Explorer>();
+=======
 	private static ArrayList<Explorer> listOfExplorer;
+<<<<<<< HEAD
 	
 public static void main(String[] argv) {
+=======
+>>>>>>> branch 'master' of https://github.com/adaoust2/Explorateurs_Autonomes
+	public static void main(String[] argv) {
+>>>>>>> branch 'master' of https://github.com/adaoust2/Explorateurs_Autonomes.git
 		System.out.println("Test Started");
 		// if you want to make your own test just comment my line testMap and create your own fonction for your test
-		//testMap();
-		testMenu();
+		testMap();
+		//testMenu();
 		
 		
 		
@@ -35,13 +48,18 @@ public static void main(String[] argv) {
 		Gui gui = new Gui(map.getTabOfMap(),map.getWidth(),map.getHeight(),3,map.getListOfMonster(),listOfExplorer);
 					
 		while(true) {
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			map.getListOfMonster().get(0).move();
 			map.getListOfMonster().get(1).move();
 			map.getListOfMonster().get(2).move();
 			listOfExplorer.get(0).action(map.getTabOfMap());
 			listOfExplorer.get(1).action(map.getTabOfMap());
 			listOfExplorer.get(2).action(map.getTabOfMap());
-	
 			gui.Display();
 		}
 

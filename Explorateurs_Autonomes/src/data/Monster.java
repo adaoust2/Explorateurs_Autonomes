@@ -80,4 +80,7 @@ public class Monster extends Agent {
 
 
 
+<<<<<<< HEAD
+=======
 }
+>>>>>>> branch 'master' of https://github.com/adaoust2/Explorateurs_Autonomes
