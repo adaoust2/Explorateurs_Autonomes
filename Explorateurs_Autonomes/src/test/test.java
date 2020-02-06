@@ -1,8 +1,10 @@
 package test;
 
+import data.Explorer;
 import data.Map;
 import gui.Gui;
 import gui.Menu;
+import gui.SelectionMenu;
 
 import java.util.*;
 
@@ -12,26 +14,44 @@ import java.util.*;
  * this class is for launch the app and make unit test
  */
 public class test {
-	public static void main(String[] argv) {
+	private static ArrayList<Explorer> listOfExplorer;
+	
+public static void main(String[] argv) {
 		System.out.println("Test Started");
 		// if you want to make your own test just comment my line testMap and create your own fonction for your test
-		testMap();
-		//testMenu();
+		//testMap();
+		testMenu();
 		
 		
 		
 	}
 	public static void testMap() {
-		Map map = new Map(800,600);
+		Map map = new Map(); // default constructor
 		map.generateNewMap();
-		System.out.println("map size x=" + map.getWidth() + " and y= " + map.getHeight());
-		double tab[][] = map.getTabOfMap();
-		Gui gui = new Gui(tab,map.getWidth(),map.getHeight(),3);
-		gui.Display();
+		Explorer e1 = new Explorer("Arya",80,map.getWidth()*0.78,map.getHeight()*0.85,15,map.getWidth(), map.getHeight());e1.setPersonnalMap();
+		Explorer e2 = new Explorer("Jane",80,map.getWidth()*0.73,map.getHeight()*0.85,15,map.getWidth(), map.getHeight());e2.setPersonnalMap();
+		Explorer e3 = new Explorer("Daryl",80,map.getWidth()*0.68,map.getHeight()*0.85,15,map.getWidth(), map.getHeight());e3.setPersonnalMap();
+		listOfExplorer.add(e1);listOfExplorer.add(e2);listOfExplorer.add(e3);
+		Gui gui = new Gui(map.getTabOfMap(),map.getWidth(),map.getHeight(),3,map.getListOfMonster(),listOfExplorer);
+					
+		while(true) {
+			map.getListOfMonster().get(0).move();
+			map.getListOfMonster().get(1).move();
+			map.getListOfMonster().get(2).move();
+			listOfExplorer.get(0).action(map.getTabOfMap());
+			listOfExplorer.get(1).action(map.getTabOfMap());
+			listOfExplorer.get(2).action(map.getTabOfMap());
+	
+			gui.Display();
+		}
+
 		
 	}
 	public static void testMenu() {
 		Menu menu = new Menu();
+		//menu.refresh();
+		//SelectionMenu sm= new SelectionMenu();
+		//sm.selectPersonnage();
 	}
 
 	

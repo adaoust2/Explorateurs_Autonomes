@@ -34,7 +34,6 @@ public class Button extends JButton implements MouseListener{
 	}
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 
