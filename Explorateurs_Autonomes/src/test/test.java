@@ -1,8 +1,6 @@
 package test;
 
 import data.DataRepository;
-=======
->>>>>>> branch 'master' of https://github.com/adaoust2/Explorateurs_Autonomes
 import data.Explorer;
 import data.Map;
 import gui.Gui;
@@ -26,8 +24,6 @@ public class test {
 		// if you want to make your own test just comment my line testMap and create your own fonction for your test
 		testMap();
 		//testMenu();
-		
-		
 	}
 	public static void testMap() {
 		Map map = new Map(); // default constructor
