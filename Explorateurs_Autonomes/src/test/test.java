@@ -1,6 +1,5 @@
 package test;
 
-<<<<<<< HEAD
 import data.DataRepository;
 =======
 >>>>>>> branch 'master' of https://github.com/adaoust2/Explorateurs_Autonomes
