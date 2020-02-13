@@ -12,7 +12,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
@@ -38,7 +40,6 @@ public class Menu extends JPanel implements ActionListener{
 	private JPanel content = this;
 	private Font font;
 	private Font fonttitle;
-	private Icon icon;
 	private Button game = new Button();
 	private Button high = new Button();
 	private Button arya = new Button();
@@ -50,21 +51,20 @@ public class Menu extends JPanel implements ActionListener{
 	private Button rocky = new Button();
 	private Button rosa = new Button();
 	private Button sonic = new Button();
-	
+	private static HashMap<String,Image> hashBuffImage=new HashMap<String,Image>();
+
 	public Menu() {
 		
 		menu.setSize(GParameter.WIDTH, GParameter.HEIGH);
 		menu.setTitle("Exploreur");
-
+		
 		menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		try {
-			back=ImageIO.read(new File("src/Pictures/explo1.jpeg"));
-		}catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		loading();
+		back=Menu.hashBuffImage.get(GParameter.MENU);
 		setBack();
 		menu.setVisible(true);	
 	}
+
 	public void paintComponent(Graphics g) {
 		g.drawImage(back, 0, 0, GParameter.WIDTH, GParameter.HEIGH, content);
 		fonttitle = new Font("Title", Font.BOLD, 100);
@@ -83,11 +83,11 @@ public class Menu extends JPanel implements ActionListener{
 		content.setVisible(true);
 		game.setBounds(400, 550, 450, 200);
 		game.setVisible(true);
-		game.setIcon(new ImageIcon("src/Pictures/button_new.jpg"));
+		game.setIcon(new ImageIcon(Menu.getHashBuffImage().get(GParameter.GAME)));
 
 		high.setBounds(950, 550, 450, 200);
 		high.setVisible(true);
-		high.setIcon(new ImageIcon("src/Pictures/button2.jpg"));
+		high.setIcon(new ImageIcon(Menu.getHashBuffImage().get(GParameter.SCORE)));
 		game.addActionListener(this);
 		pan.setBounds(0, 0, 500, 500);
 		pan.setBackground(GParameter.ORANGE);
@@ -113,6 +113,31 @@ public class Menu extends JPanel implements ActionListener{
 	public void remove() {
 		menu.remove(game);
 	}
-	
+	public void loading() {
+		if(hashBuffImage.isEmpty()) {
+
+            File fileImag= new File("src/Pictures");
+
+            String[]listFileIma =fileImag.list();
+
+            Image bimg = null;
+
+            for(int i=0;i<listFileIma.length;i++){
+
+                         try {
+							bimg=(Image) ImageIO.read(new File("src/Pictures/"+listFileIma[i]));
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+
+                         hashBuffImage.put(listFileIma[i], bimg);
+
+            }
+
+		}
+	}
+	public static HashMap<String, Image> getHashBuffImage() {
+		return hashBuffImage;
+	}
 
 }

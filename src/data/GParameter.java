@@ -19,6 +19,22 @@ public class GParameter {
 	public static final Color BANANA = new Color(209,182,6);
 	public static final Color SABLE = new Color(224,205,169);
 	
+	public static final String MENU = "explo1.jpeg";
+	public static final String GAME = "button_new.jpg";
+	public static final String SCORE = "button2.jpg";
+	public static final String ARYA = "Arya_button.png";
+	public static final String SELECMENU = "fond2.jpg";
+	public static final String PARCHEMIN = "Parchemin.png";
+	public static final String BOB = "Bob_button.png";
+	public static final String BABOUCHE = "Babouche_button.png";
+	public static final String DARYL = "Daryl_button.png";
+	public static final String FAROUDJA = "Farouja_button.png";
+	public static final String PATRICK = "Patrick_button.png";
+	public static final String ROCKY = "Rocky_button.png";
+	public static final String ROSA = "Rosa_button.png";
+	public static final String SONIC = "Sonic_button.png";
+	
+	
 	public static int WIDTH = 1920;
 	public static int HEIGH = 1080;
 	public static int mapWidth = 700;

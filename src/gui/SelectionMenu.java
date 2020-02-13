@@ -33,14 +33,12 @@ public class SelectionMenu extends JPanel implements ActionListener{
 	private Dimension dimension;
 	private int heigh;
 	private int width;
+	int persoskill=0;
+	SkillsMenu sm = new SkillsMenu(persoskill);
 	
 	public SelectionMenu() {
-		try {
-			back=ImageIO.read(new File("src/Pictures/fond2.jpg"));
-			parchemin=ImageIO.read(new File("src/Pictures/Parchemin.png"));
-		}catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
+		back=Menu.getHashBuffImage().get(GParameter.SELECMENU);
+		parchemin=Menu.getHashBuffImage().get(GParameter.PARCHEMIN);
 	    dimension = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
 	    heigh=(int) dimension.getHeight();
 	    width=(int) dimension.getWidth();
@@ -82,7 +80,7 @@ public class SelectionMenu extends JPanel implements ActionListener{
 				arya.setVisible(true);
 				arya.setOpaque(false);
 				arya.setBorder(null);
-				arya.setIcon(new ImageIcon("src/Pictures/Arya_button.png"));
+				arya.setIcon(new ImageIcon(Menu.getHashBuffImage().get(GParameter.ARYA)));
 				arya.setBackground(GParameter.SABLE);
 				arya.addActionListener(this);
 				x=x+136;
@@ -94,7 +92,7 @@ public class SelectionMenu extends JPanel implements ActionListener{
 				bob.setVisible(true);
 				bob.setOpaque(false);
 				bob.setBorder(null);
-				bob.setIcon(new ImageIcon("src/Pictures/Bob_button.png"));
+				bob.setIcon(new ImageIcon(Menu.getHashBuffImage().get(GParameter.BOB)));
 				bob.setBackground(GParameter.SABLE);
 				bob.addActionListener(this);
 				x=x+136;
@@ -106,7 +104,7 @@ public class SelectionMenu extends JPanel implements ActionListener{
 				babouche.setVisible(true);
 				babouche.setOpaque(false);
 				babouche.setBorder(null);
-				babouche.setIcon(new ImageIcon("src/Pictures/Babouche_button.png"));
+				babouche.setIcon(new ImageIcon(Menu.getHashBuffImage().get(GParameter.BABOUCHE)));
 				babouche.setBackground(GParameter.SABLE);
 				babouche.addActionListener(this);
 				x=x+136;
@@ -119,7 +117,7 @@ public class SelectionMenu extends JPanel implements ActionListener{
 				daryl.setVisible(true);
 				daryl.setOpaque(false);
 				daryl.setBorder(null);
-				daryl.setIcon(new ImageIcon("src/Pictures/Daryl_button.png"));
+				daryl.setIcon(new ImageIcon(Menu.getHashBuffImage().get(GParameter.DARYL)));
 				daryl.setBackground(GParameter.SABLE);
 				daryl.addActionListener(this);
 				x=x+136;
@@ -132,7 +130,7 @@ public class SelectionMenu extends JPanel implements ActionListener{
 				faroudja.setVisible(true);
 				faroudja.setOpaque(false);
 				faroudja.setBorder(null);
-				faroudja.setIcon(new ImageIcon("src/Pictures/Farouja_button.png"));
+				faroudja.setIcon(new ImageIcon(Menu.getHashBuffImage().get(GParameter.FAROUDJA)));
 				faroudja.setBackground(GParameter.SABLE);
 				faroudja.addActionListener(this);
 				x=x+136;
@@ -145,7 +143,7 @@ public class SelectionMenu extends JPanel implements ActionListener{
 				patrick.setVisible(true);
 				patrick.setOpaque(false);
 				patrick.setBorder(null);
-				patrick.setIcon(new ImageIcon("src/Pictures/Patrick_button.png"));
+				patrick.setIcon(new ImageIcon(Menu.getHashBuffImage().get(GParameter.PATRICK)));
 				patrick.setBackground(GParameter.SABLE);
 				patrick.addActionListener(this);
 				x=x+136;
@@ -158,7 +156,7 @@ public class SelectionMenu extends JPanel implements ActionListener{
 				rocky.setVisible(true);
 				rocky.setOpaque(false);
 				rocky.setBorder(null);
-				rocky.setIcon(new ImageIcon("src/Pictures/Rocky_button.png"));
+				rocky.setIcon(new ImageIcon(Menu.getHashBuffImage().get(GParameter.ROCKY)));
 				rocky.setBackground(GParameter.SABLE);
 				rocky.addActionListener(this);
 				x=x+136;
@@ -171,7 +169,7 @@ public class SelectionMenu extends JPanel implements ActionListener{
 				rosa.setVisible(true);
 				rosa.setOpaque(false);
 				rosa.setBorder(null);
-				rosa.setIcon(new ImageIcon("src/Pictures/Rosa_button.png"));
+				rosa.setIcon(new ImageIcon(Menu.getHashBuffImage().get(GParameter.ROSA)));
 				rosa.setBackground(GParameter.SABLE);
 				rosa.addActionListener(this);
 				x=x+136;
@@ -184,7 +182,7 @@ public class SelectionMenu extends JPanel implements ActionListener{
 				sonic.setVisible(true);
 				sonic.setOpaque(false);
 				sonic.setBorder(null);
-				sonic.setIcon(new ImageIcon("src/Pictures/Sonic_button.png"));
+				sonic.setIcon(new ImageIcon(Menu.getHashBuffImage().get(GParameter.SONIC)));
 				sonic.setBackground(GParameter.SABLE);
 				sonic.addActionListener(this);
 				x=x+136;
@@ -199,7 +197,7 @@ public class SelectionMenu extends JPanel implements ActionListener{
 		}
 	}
 	public void actionPerformed(ActionEvent e) {
-		int persoskill=0;
+		repaint();
 		if(e.getSource()==bob) {
 			persoskill=1;
 		}else if(e.getSource()==babouche) {
@@ -216,11 +214,13 @@ public class SelectionMenu extends JPanel implements ActionListener{
 			persoskill=7;
 		}else if(e.getSource()==sonic) {
 			persoskill=8;
+		}else {
+			persoskill=0;
 		}
 
-		SkillsMenu sm = new SkillsMenu(persoskill);
-		this.remove(sm);
+		sm.choice(persoskill);
+
+		sm.repaint();
 		this.add(sm);
-		repaint();
 	}
 }

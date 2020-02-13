@@ -18,13 +18,7 @@ import data.GParameter;
 public class SkillsMenu extends JPanel{
 	private Button butadd = new Button();
 	private Dimension dimension;
-	private int width;
-	private int heigh;
-	private int perso;
-	private int verysmall;
-	private int small;
-	private int medium;
-	private int tall;
+	private int width,heigh,perso,persos,verysmall,small,medium,tall;
 	private String vs,s,m,t;
 	private Image arya,bob,babouche,daryl,faroudja,patrick,rocky,rosa,sonic;
 	private String name;
@@ -39,6 +33,8 @@ public class SkillsMenu extends JPanel{
 	public void choice(int perso) {
 		if(perso==0) {
 			name="Arya";
+			persos=0;
+			particularskill="";
 			try {
 				arya=ImageIO.read(new File("src/Pictures/Arya_button.png"));
 			} catch (IOException e) {
@@ -46,6 +42,7 @@ public class SkillsMenu extends JPanel{
 			}
 		}else if(perso==1) {
 			name="Bob";
+			persos=1;
 			try {
 				bob=ImageIO.read(new File("src/Pictures/Bob_button.png"));
 			} catch (IOException e) {
@@ -54,14 +51,16 @@ public class SkillsMenu extends JPanel{
 			particularskill="can repare one item during the adventure";
 		}else if(perso==2) {
 			name="Babouche";
+			persos=2;
 			try {
 				babouche=ImageIO.read(new File("src/Pictures/Babouche_button.png"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			particularskill="he will always flee the fight but you have a hudge reduction at the market";
+			particularskill="he will always flee the fight but have a hudge reduction at the market";
 		}else if(perso==3) {
 			name="Daryl";
+			persos=3;
 			try {
 				daryl=ImageIO.read(new File("src/Pictures/Daryl_button.png"));
 			} catch (IOException e) {
@@ -70,6 +69,8 @@ public class SkillsMenu extends JPanel{
 			particularskill="he is solitary, he have trouble to communicate with others";
 		}else if(perso==4) {
 			name="Faroudja";
+			persos=4;
+			particularskill="";
 			try {
 				faroudja=ImageIO.read(new File("src/Pictures/Farouja_button.png"));
 			} catch (IOException e) {
@@ -77,6 +78,8 @@ public class SkillsMenu extends JPanel{
 			}
 		}else if(perso==5) {
 			name="Patrick";
+			persos=5;
+			particularskill="";
 			try {
 				patrick=ImageIO.read(new File("src/Pictures/Patrick_button.png"));
 			} catch (IOException e) {
@@ -86,23 +89,29 @@ public class SkillsMenu extends JPanel{
 			particularskill="he is unconscious, he will always attack monster";
 		}else if(perso==6) {
 			name="Rocky";
+			persos=6;
+			particularskill="";
 			try {
 				rocky=ImageIO.read(new File("src/Pictures/Rocky_button.png"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			particularskill="he is very noisy,\n monster will spot from further away";
+			particularskill="he is very noisy, monster will spot from further away";
 		}else if(perso==7) {
 			name="Rosa";
+			persos=7;
+			particularskill="";
 			try {
 				rosa=ImageIO.read(new File("src/Pictures/Rosa_button.png"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			particularskill="she is a leader,\n she can communicate from further away";
+			particularskill="she is a leader, she can communicate from further away";
 		}else {
 			name="Sonic";
+			persos=8;
+			particularskill="";
 			try {
 				sonic=ImageIO.read(new File("src/Pictures/Sonic_button.png"));
 			} catch (IOException e) {
@@ -126,11 +135,11 @@ public class SkillsMenu extends JPanel{
 	    g.drawString("Intelligence", width/6-width/100, heigh/7+(heigh/15)*3);
 	    g.drawString("Luck", width/6-width/100, heigh/7+(heigh/15)*4);
 	    g.drawString("Particular skill", width/6-width/100, heigh/7+(heigh/15)*5);
-	    g.drawString(particularskill , width/50, heigh/7+(heigh/15)*6+heigh/30);
+	    g.drawString(particularskill , 0, heigh/7+(heigh/15)*6+heigh/30);
 		Graphics2D g1 = (Graphics2D) g;
 		BasicStroke line = new BasicStroke(10);
 		g1.setStroke(line);
-		if (perso==0) {
+		if (persos==0) {
 			g.drawImage(arya, 0, heigh/20, width/6, heigh/2, this);
 			t1=verysmall;
 			t2=tall;
@@ -142,7 +151,7 @@ public class SkillsMenu extends JPanel{
 			c3=m;
 			c4=t;
 			c5=s;
-		}else if(perso==1) {
+		}else if(persos==1) {
 			g.drawImage(bob, 0, heigh/20, width/6, heigh/2, this);
 			t1=verysmall;
 			t2=t3=t4=medium;
@@ -150,7 +159,7 @@ public class SkillsMenu extends JPanel{
 			c1=vs;
 			c2=c3=c4=m;
 			c5=t;
-		}else if(perso==2) {
+		}else if(persos==2) {
 			g.drawImage(babouche, 0, heigh/20, width/6, heigh/2, this);
 			t1=verysmall;
 			t2=small;
@@ -160,13 +169,13 @@ public class SkillsMenu extends JPanel{
 			c2=s;
 			c3=c5=t;
 			c4=m;
-		}else if(perso==3) {
+		}else if(persos==3) {
 			g.drawImage(daryl, 0, heigh/20, width/6, heigh/2, this);
 			t1=t2=t3=tall;
 			t4=t5=medium;
 			c1=c2=c3=t;
 			c4=c5=m;
-		}else if(perso==4) {
+		}else if(persos==4) {
 			g.drawImage(faroudja, 0, heigh/20, width/6, heigh/2, this);
 			t1=t3=medium;
 			t2=small;
@@ -176,7 +185,7 @@ public class SkillsMenu extends JPanel{
 			c2=s;
 			c4=t;
 			c5=vs;
-		}else if(perso==5) {
+		}else if(persos==5) {
 			g.drawImage(patrick, 0, heigh/20, width/6, heigh/2, this);
 			t1=t3=tall;
 			t2=t4=verysmall;
@@ -184,13 +193,13 @@ public class SkillsMenu extends JPanel{
 			c1=c3=t;
 			c2=c4=vs;
 			c5=m;
-		}else if(perso==6) {
+		}else if(persos==6) {
 			g.drawImage(rocky, 0, heigh/20, width/6, heigh/2, this);
 			t1=t3=t5=tall;
 			t2=t4=verysmall;
 			c1=c3=c5=t;
 			c2=c4=vs;
-		}else if(perso==7) {
+		}else if(persos==7) {
 			g.drawImage(rosa, 0, heigh/20, width/6, heigh/2, this);
 			t1=small;
 			t2=t5=verysmall;
@@ -247,4 +256,7 @@ public class SkillsMenu extends JPanel{
 		m="50";
 		t="90";
 	}	
+	public void update() {
+		
+	}
 }
