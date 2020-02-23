@@ -69,4 +69,10 @@ public class GParameter {
 	
 	public static boolean updateInfos = false;
 	
+	public static boolean updateItem = false;
+	
+	public static void updateItem() {
+		updateItem=true;
+	}
+	
 }

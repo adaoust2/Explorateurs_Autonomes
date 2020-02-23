@@ -34,7 +34,7 @@ import data.GParameter;
 * 
 */
 public class Menu extends JPanel implements ActionListener{
-	private JFrame menu = new JFrame() ;
+	private static JFrame menu = new JFrame() ;
 	private JPanel pan = new JPanel();
 	private Image back;
 	private JPanel content = this;
@@ -94,10 +94,8 @@ public class Menu extends JPanel implements ActionListener{
 		menu.add(high);
 		menu.add(game);
 		menu.add(content);
-
-
 	}
-	public JFrame getMenu() {
+	public static JFrame getMenu() {
 		return menu;
 	}
 	public void actionPerformed(ActionEvent evt) {

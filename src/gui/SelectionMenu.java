@@ -33,6 +33,7 @@ public class SelectionMenu extends JPanel implements ActionListener{
 	private Dimension dimension;
 	private int heigh;
 	private int width;
+	private int money=1000;
 	int persoskill=0;
 	SkillsMenu sm = new SkillsMenu(persoskill);
 	
@@ -60,6 +61,7 @@ public class SelectionMenu extends JPanel implements ActionListener{
 	    g.setFont(fonttitle);
 	    g.setColor(GParameter.WHITE);
 	    g.drawString("Choose your explorer", 250, 150);
+
 
 	}
 	
